@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+void pilihan(){
+    cout << "Catatan Saldo Uang" << endl;
+    cout << "1. Pemasukan" << endl;
+    cout << "2. Pengeluaran" << endl;
+    cout << "3. Tampilkan Saldo" << endl;
+    cout << "4. Keluar" << endl;
+    cout << "Pilihlah Opsi yang Ingin Anda Pilih (1-4): " << endl;
+}
+
+int main() {
+    int pemasukan;
+    int pengeluaran;
+    int opsi;
+    int saldo;
+    
+    do{
+        pilihan();
+        cin >> opsi;
+        cout << endl;
+        
+        switch(opsi){
+            case 1:
+                cout << "Pemasukan: " << endl;
+                cin >> pemasukan;
+                cout << endl;
+                saldo += pemasukan;
+                break;
+            case 2: 
+                cout << "Pengeluaran: " << endl;
+                cin >> pengeluaran;
+                cout << endl;
+                
+                if(saldo > pengeluaran){
+                    saldo -= pengeluaran;
+                }
+                else{
+                    cout << "Saldo Tidak Cukup" << endl;
+                }
+                break;
+            case 3:
+                cout << "Rp. " <<saldo << endl;
+                break;
+        }
+    }while(opsi != 4);
+
+    return 0;
+}
